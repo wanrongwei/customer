@@ -1,0 +1,56 @@
+spring:
+  datasource:
+    url: jdbc:mysql://10.1.248.209:3306/base?rewriteBatchedStatements=true&cachePrepStmts=false&useServerPrepStmts=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&useSSL=false&useLocalSessionState=true&serverTimezone=Asia/Shanghai
+    username: BASE
+    password: tst031-123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
+      max-lifetime: 1200000
+  data:
+    redis:
+      host: 10.1.248.210
+      password: Telenor@Crm
+      port: 48300
+      jedis:
+        pool:
+          max-active: 10
+          max-wait: 10000
+          max-idle: 1
+          min-idle: 1
+      timeout: 100000
+server:
+  port: 18081
+com:
+  aie:
+    sso:
+      sso-url: http://10.1.248.210:40000/
+logging:
+  level:
+    com.aie: DEBUG
+flying:
+  server:
+    clients:
+      - module: cm
+        url: 10.1.248.215:18081
+      - module: ci
+        url: 10.1.248.215:18181
+      - module: agr
+        url: 10.1.248.215:18281
+      - module: ins
+        url: 10.1.248.215:18381
+      - module: ord
+        url: 10.1.248.215:18481
+      - module: res
+        url: 10.1.248.215:18581
+      - module: tt
+        url: 10.1.248.215:18681
+      - module: oneframe
+        url: 10.1.248.215:18881
+      - module: push
+        url: 10.1.248.215:18981
+      - module: copilot
+        url: 10.1.248.215:19081

@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: cm-server
+  mvc:
+    contentnegotiation:
+      favor-parameter: true
+      favor-path-extension: true
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  datasource:
+    url: jdbc:mysql://10.1.248.209:3306/base?rewriteBatchedStatements=true&cachePrepStmts=false&useServerPrepStmts=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&useSSL=false&useLocalSessionState=true&serverTimezone=Asia/Shanghai
+    username: BASE
+    password: tst031-123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
+      max-lifetime: 1200000
+  data:
+    redis:
+      host: 10.1.248.210
+      password: Telenor@Crm
+      port: 48300
+      jedis:
+        pool:
+          max-active: 10
+          max-wait: 10000
+          max-idle: 1
+          min-idle: 1
+      timeout: 100000
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+      
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.aie.api.model
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      column-format: "`%s`"
+server:
+  port: 18081
+logging:
+  level:
+    com.aie: DEBUG

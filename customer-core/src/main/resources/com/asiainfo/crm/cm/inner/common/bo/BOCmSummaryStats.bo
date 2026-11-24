@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="party" name="BOCmSummaryStats" mainattr="CUSTOMER_ID">
+    <mapingenty type="table">{CM_SUMMARY_STATS}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CUSTOMER_ID" maxlength="18" datatype="Long" type="PK" remark="客户ID">
+        <mapingcol datatype="BIGINT">CUSTOMER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RECORD_DATE" maxlength="0" datatype="Timestamp" type="COL" remark="统计日期">
+        <mapingcol datatype="DATETIME">RECORD_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TOTAL_USERS" maxlength="10" datatype="Long" type="COL" remark="总用户数">
+        <mapingcol datatype="INT">TOTAL_USERS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="VOICE_USERS" maxlength="10" datatype="Long" type="COL" remark="voice用户数">
+        <mapingcol datatype="INT">VOICE_USERS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DATA_USERS" maxlength="10" datatype="Long" type="COL" remark="data用户数">
+        <mapingcol datatype="INT">DATA_USERS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="VPN_USERS" maxlength="10" datatype="Long" type="COL" remark="vpn用户数">
+        <mapingcol datatype="INT">VPN_USERS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATAGORY_DATA" maxlength="500" datatype="String" type="COL" remark="分产品线统计数">
+        <mapingcol datatype="VARCHAR">CATAGORY_DATA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE_DATA" maxlength="500" datatype="String" type="COL" remark="分用户状态统计数据">
+        <mapingcol datatype="VARCHAR">STATE_DATA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TOTAL_ACCOUNTS" maxlength="10" datatype="Long" type="COL" remark="总账户数">
+        <mapingcol datatype="INT">TOTAL_ACCOUNTS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACTIVE_ACCOUNTS" maxlength="10" datatype="Long" type="COL" remark="有效账户数">
+        <mapingcol datatype="INT">ACTIVE_ACCOUNTS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TOTAL_BILLS" maxlength="10" datatype="Long" type="COL" remark="总账单数">
+        <mapingcol datatype="INT">TOTAL_BILLS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PAID_BILLS" maxlength="10" datatype="Long" type="COL" remark="已支付账单数">
+        <mapingcol datatype="INT">PAID_BILLS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="UNPAID_BILLS" maxlength="10" datatype="Long" type="COL" remark="未支付账单数">
+        <mapingcol datatype="INT">UNPAID_BILLS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OVERDUE_BILLS" maxlength="10" datatype="Long" type="COL" remark="逾期账单数">
+        <mapingcol datatype="INT">OVERDUE_BILLS</mapingcol>
+      </attr>
+      <attr floatlength="2" name="TOTAL_BILL_AMOUNT" maxlength="15" datatype="Long" type="COL" remark="账单总金额">
+        <mapingcol datatype="DECIMAL">TOTAL_BILL_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="UNPAID_AMOUNT" maxlength="15" datatype="Long" type="COL" remark="未支付金额">
+        <mapingcol datatype="DECIMAL">UNPAID_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACCOUNT_DATA" maxlength="0" datatype="String" type="COL" remark="账户报文">
+        <mapingcol datatype="MEDIUMTEXT">ACCOUNT_DATA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLAINT_COUNT" maxlength="10" datatype="Long" type="COL" remark="投诉单数">
+        <mapingcol datatype="INT">COMPLAINT_COUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OVERDUE_ORDER" maxlength="10" datatype="Long" type="COL" remark="超期订单">
+        <mapingcol datatype="INT">OVERDUE_ORDER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_MODIFY_DATA" maxlength="500" datatype="String" type="COL" remark="用户变化数据">
+        <mapingcol datatype="VARCHAR">USER_MODIFY_DATA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RAW_DATA" maxlength="0" datatype="String" type="COL" remark="原始数据JSON报文">
+        <mapingcol datatype="MEDIUMTEXT">RAW_DATA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DETAIL_STATS" maxlength="0" datatype="String" type="COL" remark="详细统计JSON数据">
+        <mapingcol datatype="MEDIUMTEXT">DETAIL_STATS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTENDED_INFO" maxlength="0" datatype="String" type="COL" remark="扩展信息JSON">
+        <mapingcol datatype="MEDIUMTEXT">EXTENDED_INFO</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

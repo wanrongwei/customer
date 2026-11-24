@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="party" name="BOCmSummaryStatsExt" mainattr="ID">
+    <mapingenty type="table">{CM_SUMMARY_STATS_EXT}</mapingenty>
+    <datafilter />
+    <attrlist>
+     <attr floatlength="0" name="ID" maxlength="18" datatype="Long" type="PK" remark="ID">
+            <mapingcol datatype="BIGINT">ID</mapingcol>
+       </attr>
+      <attr floatlength="0" name="CUSTOMER_ID" maxlength="18" datatype="Long" type="COL" remark="客户ID">
+        <mapingcol datatype="BIGINT">CUSTOMER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RECORD_DATE" maxlength="0" datatype="DateTime" type="COL" remark="统计日期">
+        <mapingcol datatype="DATE">RECORD_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DETAIL_STATS" maxlength="0" datatype="String" type="COL" remark="详细统计JSON数据">
+        <mapingcol datatype="MEDIUMTEXT">DETAIL_STATS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GROUP_TYPE" maxlength="0" datatype="String" type="COL" remark="扩展信息JSON">
+        <mapingcol datatype="varchar">GROUP_TYPE</mapingcol>
+      </attr>
+       <attr floatlength="0" name="GROUP_CODE" maxlength="0" datatype="String" type="COL" remark="扩展信息JSON">
+            <mapingcol datatype="varchar">GROUP_CODE</mapingcol>
+       </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<config>
+	<!--以下配置后台进程需要的信息-->
+	<app>
+		<!--具体接口相关的配置-->
+		<interfaces>
+			<interface id="default">
+				<log>
+					<power>false</power>	<!--是否开启日志功能(true/1表示开启，其他为不开启)-->
+					<sync>true</sync>	<!--是否同步记录日志(true/1表示同步，其他为异步)-->
+					<mode>file</mode>	<!--采用文件还是数据库进行记录(db为数据库，其他为file)-->
+					<file-prefix>SH-CRM-INF-</file-prefix>	<!--日志文件名前缀-->
+					<file-suffix>.log</file-suffix>	<!--日志文件名后缀-->
+					<file-pattern>[Y][M][D]</file-pattern>	<!--日志文件名模板，[Y]：年；[M]：月；[D]：日；[H]：时；[m]：分；[s]：秒-->
+					<file-path>C:</file-path>	<!--日志文件输出目录-->
+					<to-database-class>com.asiainfo.crm.inter.data.log.LogInfoToDataBaseImpl</to-database-class>	<!--日志入库实现类-->
+					<scan-number>500</scan-number>	<!--解析多少组日志信息入库一次-->
+				</log>
+			</interface>
+			<interface id="10000">
+				
+			</interface>
+		</interfaces>
+	</app>
+</config>

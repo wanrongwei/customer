@@ -1,0 +1,70 @@
+spring:
+  datasource:
+    url: jdbc:mysql://10.226.61.229:5310/base?rewriteBatchedStatements=true&cachePrepStmts=false&useServerPrepStmts=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&useSSL=false&useLocalSessionState=true&serverTimezone=Europe/Copenhagen
+    username: BASE
+    password: E7428G5YmuFvc3Q2
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
+      max-lifetime: 1200000
+  data:
+    redis:
+      host: 10.226.61.228
+      password: Test8redis@2018
+      port: 6379
+      jedis:
+        pool:
+          max-active: 10
+          max-wait: 10000
+          max-idle: 1
+          min-idle: 1
+      timeout: 100000
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+      enabled: true
+com:
+  aie:
+    sso:
+      sso-url: http://10.226.61.214:40000/
+logging:
+  level:
+    com.aie: INFO
+flying:
+  server:
+    clients:
+      - module: cm
+        url: 10.226.61.228:18088
+      - module: ci
+        url: 10.226.61.228:18188
+      - module: agr
+        url: 10.226.61.228:18288
+      - module: ins
+        url: 10.226.61.228:18388
+      - module: ord
+        url: 10.226.61.228:18488
+      - module: res
+        url: 10.226.61.228:18588
+      - module: tt
+        url: 10.226.61.228:18688
+      - module: push
+        url: 10.226.61.228:18988
+      - module: oneframe
+        url: 10.226.61.228:18888
+      - module: copilot
+        url: 10.226.61.228:19088
+document:
+  file:
+    storage:
+      path: /Users/asplumes/Downloads/abc
+    #url: http://host.docker.internal:18281
+    url: http://10.226.61.228:18288
+  online:
+    #url: http://localhost:9980
+    url: http://10.226.61.228:8083
+  template:
+    url: http://10.226.61.228:48800

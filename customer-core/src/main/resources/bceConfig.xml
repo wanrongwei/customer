@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bce_config>
+    <items>
+        <bceItem type="BCE_STORE_TYPE" key="BCE_STORE_TIMEOUT"
+                 remark="为BCE存储中心清除相关缓存的设定定时处理时间（30分钟）">
+            1800000
+        </bceItem>
+
+        <bceItem type="BCE_STATIC_DEBUG" key="BCE_STATIC_DEBUG"
+                 remark="为BCE存储中心清除相关缓存的设定定时处理时间（30分钟）">
+            true
+        </bceItem>
+
+        <bceItem type="BCE_CLASS_IMPL_" key="com.ai.bce.util.define.IBceCUtil"
+                 remark="配置Cutil设置工具">
+            com.ai.bce.auto.plugin.cache.util.CacheUtil
+        </bceItem>
+
+        <bceItem type="BCE_CLASS_IMPL_" key="JEXL_CLASS" remark="JEXL默认加载类">
+            {DATEUTIL,com.ai.bce.util.DateUtil}{SRULE,com.asiainfo.crm.so.common.util.SRule}
+        </bceItem>
+
+        <bceItem type="BCE_CLASS_IMPL_" key="_FILTER_" remark="增加日志记录接口信息">
+            com.asiainfo.crm.so.common.util.LnRecordLog
+        </bceItem>
+
+        <bceItem type="BCE_CLASS_IMPL_" key="com.ai.bce.util.define.ISoBusiPrintInfoDefine"
+                 remark="配置免填单处理信息">
+            com.asiainfo.crm.so.common.SoBusinessImpl
+        </bceItem>
+        <bceItem type="BCE_CONFIG_I_" key="NOT_IN_REGION_" remark="配置这个里面的地市不做路由标识">
+            000
+        </bceItem>
+
+        <bceItem type="BCE_CONFIG_I_" key="IS_I18N" remark="配置这个里面的地市不做路由标识">
+            Y
+        </bceItem>
+
+        <bceItem type="BCE_CONFIG_I_" key="resType_ruleType"
+                 remark="资源渠道和规则类型对应关系,1、前台 2、后台（甘亮用）；规则类型：1，是否可执行，10，提交类规则，4，执行解析数据后的规则">
+            {1,4_10} {2,4_10_1}
+        </bceItem>
+        <bceItem type="BCE_IMPL" key="com.ai.bce.util.define.IMultiRecordDefine" remark="配置购物车相关接口">
+          com.asiainfo.crm.so.web.MultiRecordDefineImpl
+        </bceItem>
+		
+		<bceItem type="BCE_CLASS_IMPL_" key="com.ai.bce.util.define.ISubmitDataAdapter" remark="配置json解析">
+            com.ai.omframe.web.dataparse.SubmitDataAdapterImpl
+        </bceItem>
+		 <bceItem type="BCE_CONFIG_I_" key="IS_I18N" remark="是否需要国际化">Y</bceItem>
+
+    </items>
+
+    <useServiceMap>
+        <!--    <service value="com.ai.bce.service.interfaces.IBceFrameSV"
+       mapValue="com.ai.bce.auto.plugin.cache.service.interfaces.IBceFrameCacheSV"
+       isUseLocal="true" />-->
+
+    </useServiceMap>
+
+    <plugin name="Bce_Cache" type="CACHE" isLoadFile="true" isUse="false"
+            ordID="1" isUseMap="true">
+        <clazz name="com.ai.bce.auto.plugin.cache.BceCacheConfigParse"/>
+        <file name="com/ai/bce/BceAutoCache.xml" staticName="STATIC_CACHE"/>
+    </plugin>
+    <plugin name="Bce_Filter_Log" type="Log" isLoadFile="true"
+            isUse="false" ordID="2" isUseProxy="true">
+        <clazz name="com.ai.bce.auto.plugin.version.hand.util.HandFiterConfig"/>
+        <file name="com/ai/bce/hand_filter.xml" staticName="HAND_FILTER"/>
+        <proxy class="com.ai.bce.auto.plugin.version.hand.HandlerForConfigProxy"/>
+    </plugin>
+    <plugin name="print_getId_plugin" type="Log" isLoadFile="true"
+            isUse="true" ordID="3">
+        <clazz name="com.ai.bce.auto.plugin.qr.PrintFileConfig"/>
+        <file name="com/ai/bce/print_config.xml" staticName="print_getId_plugin"/>
+    </plugin>
+</bce_config>
